@@ -151,6 +151,9 @@ class Trainer(object):
             "epoch_{}_best.pth.tar" if is_best else "epoch_{}.pth.tar") \
             .format(self.current_epoch)
 
+        print("Enter the folder you want project saved under")
+            Folder_name = input("Enter the name")
+
         state = {
             'epoch': self.current_epoch,
             'state_dict': self.model.state_dict(),
@@ -158,5 +161,5 @@ class Trainer(object):
             'training_losses': self.training_losses,
             'validation_losses': self.validation_losses
         }
-        state_path = os.path.join(model_dir, file_name)
+        state_path = os.path.join(Folder_name,model_dir, file_name)
         torch.save(state, state_path)
