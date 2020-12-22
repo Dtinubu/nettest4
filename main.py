@@ -183,6 +183,7 @@ def verify(args):
 
     distance = torch.sum(torch.pow(embedings_a - embedings_b, 2)).item()
     print("distance: {}".format(distance))
+    
 
 
 if __name__ == '__main__':
