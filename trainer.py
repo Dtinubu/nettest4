@@ -151,9 +151,6 @@ class Trainer(object):
             "epoch_{}_best.pth.tar" if is_best else "epoch_{}.pth.tar") \
             .format(self.current_epoch)
 
-        print("Enter the folder you want project saved under")
-            Folder_name = input("Enter the name")
-
         state = {
             'epoch': self.current_epoch,
             'state_dict': self.model.state_dict(),
