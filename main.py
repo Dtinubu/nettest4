@@ -221,6 +221,8 @@ if __name__ == '__main__':
                              'the param is the model to use')
     parser.add_argument('--Folder_name',type=str, 
                        help='where you whant model saved at')
+    
+    Folder_name = InputName
 
     args = parser.parse_args()
     main(args)
