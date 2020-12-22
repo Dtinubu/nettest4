@@ -183,7 +183,6 @@ def verify(args):
 
     distance = torch.sum(torch.pow(embedings_a - embedings_b, 2)).item()
     print("distance: {}".format(distance))
-    
 
 
 if __name__ == '__main__':
@@ -220,8 +219,10 @@ if __name__ == '__main__':
     parser.add_argument('--verify-model', type=str,
                         help='verify 2 images of face belong to one person,'
                              'the param is the model to use')
-    parser.add_argument('--Folder_name',type=str, 
+    parser.add_argument('--folder-name',type=str, 
                        help='where you whant model saved at')
     
+    Folder_name = InputName
+
     args = parser.parse_args()
     main(args)
