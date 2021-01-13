@@ -17,8 +17,8 @@ def create_datasets(dataroot, train_val_split=0.9):
         os.mkdir(dataroot)
 
     dataroot_files = os.listdir(dataroot)
-    data_tarball_file = DATASET_TARBALL.split('/')[-1]
-    data_dir_name = data_tarball_file.split('.')[0]
+    data_tarball_file = \Users\ladet\Downloads\dataset\Asian\m.0_1f7mv
+    data_dir_name = \Users\ladet\Downloads\dataset\African\m.0_1dtzr
 
     if data_dir_name not in dataroot_files:
         if data_tarball_file not in dataroot_files:
