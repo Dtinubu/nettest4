@@ -1,3 +1,3 @@
 import torch
-device = torch.device("gpu")
+device = torch.device("cpu")
 
