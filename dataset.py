@@ -8,8 +8,8 @@ import numpy as np
 
 from utils import image_loader, download
 
-DATASET_TARBALL = "\Users\ladet\Downloads\dataset\African\m.0_1dtzr"
-PAIRS_TRAIN = "\Users\ladet\Downloads\dataset\Asian\m.0_1f7mv"
+DATASET_TARBALL = Users\ladet\Downloads\dataset\African\m.0_1dtzr
+PAIRS_TRAIN = Users\ladet\Downloads\dataset\Asian\m.0_1f7mv
 PAIRS_VAL = "http://vis-www.cs.umass.edu/lfw/pairsDevTest.txt"
 
 def create_datasets(dataroot, train_val_split=0.9):
@@ -93,7 +93,6 @@ class PairedDataset(data.Dataset):
 
     def _prepare_dataset(self):
         raise NotImplementedError
-
 
 class LFWPairedDataset(PairedDataset):
 
