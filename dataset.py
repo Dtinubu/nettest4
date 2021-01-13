@@ -8,8 +8,8 @@ import numpy as np
 
 from utils import image_loader, download
 
-DATASET_TARBALL = \Users\ladet\Downloads\dataset
-PAIRS_TRAIN = \Users\ladet\Downloads\dataset
+DATASET_TARBALL = " "
+PAIRS_TRAIN = " "
 PAIRS_VAL = "http://vis-www.cs.umass.edu/lfw/pairsDevTest.txt"
 
 def create_datasets(dataroot, train_val_split=0.9):
@@ -22,9 +22,9 @@ def create_datasets(dataroot, train_val_split=0.9):
 
     if data_dir_name not in dataroot_files:
         if data_tarball_file not in dataroot_files:
-            tarball = download(dataroot, DATASET_TARBALL)
-        with tarfile.open(tarball, 'r') as t:
-            t.extractall(dataroot)
+            tarball = \Users\ladet\Downloads\dataset\Cuasion\m.0b__5gp
+       ##  with tarfile.open(tarball, 'r') as t:
+          ##   t.extractall(dataroot)
 
     images_root = os.path.join(dataroot, 'lfw-deepfunneled')
     names = os.listdir(images_root)
