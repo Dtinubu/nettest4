@@ -17,12 +17,12 @@ def create_datasets(dataroot, train_val_split=0.9):
         os.mkdir(dataroot)
 
     dataroot_files = os.listdir(dataroot)
-    data_tarball_file = \Users\ladet\Downloads\dataset\Asian\m.0_1f7mv\
-    data_dir_name = \Users\ladet\Downloads\dataset\African\m.0_1dtzr\
+    data_tarball_file = \Users\ladet\datasets\dataset\African\m.0_1dtzr\
+    data_dir_name = \Users\ladet\datasets\dataset\Asian\m.0_1f7mv\
 
-    if data_dir_name not in dataroot_files:
-        if data_tarball_file not in dataroot_files:
-            tarball = \Users\ladet\Downloads\dataset\Cuasion\m.0b__5gp\
+    ##if data_dir_name not in dataroot_files:
+      ##  if data_tarball_file not in dataroot_files:
+        ##    tarball = \Users\ladet\Downloads\dataset\Cuasion\m.0b__5gp\
        ##  with tarfile.open(tarball, 'r') as t:
           ##   t.extractall(dataroot)
 
