@@ -8,8 +8,8 @@ import numpy as np
 
 from utils import image_loader, download
 
-DATASET_TARBALL = \Users\ladet\Downloads\dataset\African
-PAIRS_TRAIN = \Users\ladet\Downloads\dataset\Asian
+DATASET_TARBALL = \Users\ladet\Downloads\dataset
+PAIRS_TRAIN = \Users\ladet\Downloads\dataset
 PAIRS_VAL = "http://vis-www.cs.umass.edu/lfw/pairsDevTest.txt"
 
 def create_datasets(dataroot, train_val_split=0.9):
