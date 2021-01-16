@@ -8,8 +8,8 @@ import numpy as np
 
 from utils import image_loader, download
 
-DATASET_TARBALL = " "
-PAIRS_TRAIN = " "
+DATASET_TARBALL = "http://vis-www.cs.umass.edu/lfw/lfw-deepfunneled.tgz"
+PAIRS_TRAIN = "http://vis-www.cs.umass.edu/lfw/pairsDevTrain.txt"
 PAIRS_VAL = "http://vis-www.cs.umass.edu/lfw/pairsDevTest.txt"
 
 def create_datasets(dataroot, train_val_split=0.9):
@@ -17,14 +17,14 @@ def create_datasets(dataroot, train_val_split=0.9):
         os.mkdir(dataroot)
 
     dataroot_files = os.listdir(dataroot)
-    data_tarball_file = \Users\ladet\datasets\dataset\African\m.0_1dtzr\
-    data_dir_name = \Users\ladet\datasets\dataset\Asian\m.0_1f7mv\
+    data_tarball_file = DATASET_TARBALL.split('/')[-1]
+    data_dir_name = data_tarball_file.split('.')[0]
 
-    ##if data_dir_name not in dataroot_files:
-      ##  if data_tarball_file not in dataroot_files:
-        ##    tarball = \Users\ladet\Downloads\dataset\Cuasion\m.0b__5gp\
-       ##  with tarfile.open(tarball, 'r') as t:
-          ##   t.extractall(dataroot)
+    if data_dir_name not in dataroot_files:
+        if data_tarball_file not in dataroot_files:
+            tarball = download(dataroot, DATASET_TARBALL)
+        with tarfile.open(tarball, 'r') as t:
+            t.extractall(dataroot)
 
     images_root = os.path.join(dataroot, 'lfw-deepfunneled')
     names = os.listdir(images_root)
@@ -93,6 +93,7 @@ class PairedDataset(data.Dataset):
 
     def _prepare_dataset(self):
         raise NotImplementedError
+
 
 class LFWPairedDataset(PairedDataset):
 
