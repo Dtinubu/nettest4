@@ -23,7 +23,7 @@ def main(args):
         verify(args)
     else:
         train(args)
-
+## chagne to path yu want
 
 def get_dataset_dir(args):
     home = os.path.expanduser("~")
@@ -35,7 +35,7 @@ def get_dataset_dir(args):
 
     return dataset_dir
 
-
+#added logs
 def get_log_dir(args):
     log_dir = args.log_dir if args.log_dir else os.path.join(
         os.path.dirname(os.path.realpath(__file__)), 'logs')
@@ -56,14 +56,15 @@ def get_model_class(args):
 
     return model_class
 
-
+# gets model class
 def train(args):
     dataset_dir = get_dataset_dir(args)
     log_dir = get_log_dir(args)
     model_class = get_model_class(args)
 
+    # orgainzesz dataset go more into
     training_set, validation_set, num_classes = create_datasets(dataset_dir)
-
+#look more into
     training_dataset = Dataset(
             training_set, transform_for_training(model_class.IMAGE_SHAPE))
     validation_dataset = Dataset(
@@ -82,9 +83,9 @@ def train(args):
         num_workers=6,
         shuffle=False
     )
-
+# what is Numclases and devie 
     model = model_class(num_classes).to(device)
-
+# tain  trainables_wo_bn and   trainables_only_bn
     trainables_wo_bn = [param for name, param in model.named_parameters() if
                         param.requires_grad and 'bn' not in name]
     trainables_only_bn = [param for name, param in model.named_parameters() if
