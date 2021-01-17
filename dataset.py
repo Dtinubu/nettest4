@@ -103,12 +103,12 @@ class LFWPairedDataset(PairedDataset):
         for pair in pairs:
             if len(pair) == 3:
                 match = True
-                name1, name2, index1, index2 = \
+                index1, index2 = \
                     pair[0], pair[0], int(pair[1]), int(pair[2])
 
             else:
                 match = False
-                name1, name2, index1, index2 = \
+                index1, index2 = \
                     pair[0], pair[2], int(pair[1]), int(pair[3])
 
             self.image_names_a.append(os.path.join(
